@@ -1,0 +1,29 @@
+{
+  "category": "milkproducts",
+  "baseResponse": [
+    {
+      "productId": "milk-BUFF0001",
+      "productName": "Buffalo Milk",
+      "productPrice": 36.00,
+      "productStock": 10,
+      "productDescription": "It has a high nutritional value, providing more protein, vitamins, and minerals.It contains beneficial compounds that may provide antioxidant protection and improved bone and heart health",
+      "productIcon": "assets/images/200.png",
+      "productStatus": 0,
+      "categoryType": 1,
+      "createTime": "2020-04-25T11:51:48.301+0000",
+      "updateTime": null
+    },
+    {
+      "productId": "milk-COW0002",
+      "productName": "Cow Milk",
+      "productPrice": 30.00,
+      "productStock": 5,
+      "productDescription": "Cow's milk is a good source of protein and calcium, as well as nutrients including vitamin B12 and iodine. It also contains magnesium, which is important for bone development and muscle function, and whey and casein, which have been found to play a role in lowering blood pressure.",
+      "productIcon": "assets/images/200.png",
+      "productStatus": 0,
+      "categoryType": 1,
+      "createTime": "2020-04-25T11:51:48.321+0000",
+      "updateTime": null
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "category": "kids",
+  "baseResponse": [
+    {
+      "productId": "kids-V0001",
+      "productName": "brinjal",
+      "productPrice": 20.00,
+      "productStock": 22,
+      "productDescription": "brinjal",
+      "productIcon": "assets/images/blazer.jpg",
+      "productStatus": 0,
+      "categoryType": 1,
+      "createTime": "2020-04-25T11:51:48.301+0000",
+      "updateTime": null
+    },
+    {
+      "productId": "kids-V0002",
+      "productName": "cauliflower",
+      "productPrice": 20.00,
+      "productStock": 22,
+      "productDescription": "cauliflower",
+      "productIcon": "assets/images/salvar_men.jpg",
+      "productStatus": 0,
+      "categoryType": 1,
+      "createTime": "2020-04-25T11:51:48.321+0000",
+      "updateTime": null
+    },
+    {
+      "productId": "kids-V0003",
+      "productName": "cabbage",
+      "productPrice": 10.00,
+      "productStock": 42,
+      "productDescription": "cabbage",
+      "productIcon": "assets/images/shirt.jpg",
+      "productStatus": 0,
+      "categoryType": 1,
+      "createTime": "2020-05-30T02:21:51.049+0000",
+      "updateTime": null
+    },
+    {
+      "productId": "kids-V0004",
+      "productName": "brinjal",
+      "productPrice": 28.00,
+      "productStock": 30,
+      "productDescription": "brinjal",
+      "productIcon": "assets/images/trouser.jpg",
+      "productStatus": 0,
+      "categoryType": 1,
+      "createTime": "2020-05-30T02:21:51.086+0000",
+      "updateTime": null
+    },
+    {
+      "productId": "kids-V0005",
+      "productName": "carrot",
+      "productPrice": 48.00,
+      "productStock": 50,
+      "productDescription": "carrot",
+      "productIcon": "assets/images/vest.jpg",
+      "productStatus": 0,
+      "categoryType": 1,
+      "createTime": "2020-05-30T02:21:51.109+0000",
+      "updateTime": null
+    },
+    {
+      "productId": "kids-V0006",
+      "productName": "carrot",
+      "productPrice": 48.00,
+      "productStock": 50,
+      "productDescription": "Urad Dal",
+      "productIcon": "assets/images/blazer.jpg",
+      "productStatus": 0,
+      "categoryType": 1,
+      "createTime": "2020-05-30T02:34:50.873+0000",
+      "updateTime": null
+    },
+    {
+      "productId": "kids-V0007",
+      "productName": "carrot",
+      "productPrice": 48.00,
+      "productStock": 50,
+      "productDescription": "turmeric",
+      "productIcon": "assets/images/shirt.jpg",
+      "productStatus": 0,
+      "categoryType": 1,
+      "createTime": "2020-05-30T02:34:50.900+0000",
+      "updateTime": null
+    },
+    {
+      "productId": "kids-V0008",
+      "productName": "carrot",
+      "productPrice": 48.00,
+      "productStock": 50,
+      "productDescription": "Moong Dal",
+      "productIcon": "assets/images/blazer.jpg",
+      "productStatus": 0,
+      "categoryType": 1,
+      "createTime": "2020-05-30T02:34:50.920+0000",
+      "updateTime": null
+    }
+  ]
+}

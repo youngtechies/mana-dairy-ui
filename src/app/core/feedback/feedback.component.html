@@ -1,0 +1,148 @@
+<div [formGroup]="formGroup" class="feedback-form-height">
+  <div>
+    <h3 class="global-font">Select the query type</h3>
+    <mat-button-toggle-group #group="matButtonToggleGroup" name="fontStyle" aria-label="Font Style"
+                             class="feedback-outer-div-row"
+                             [value]="selectedVal" (change)="onValChange(group.value)">
+      <mat-button-toggle value="productFeedback">Product feedback</mat-button-toggle>
+      <mat-button-toggle value="suggestion">Suggestion</mat-button-toggle>
+      <mat-button-toggle value="deliveryFeedback">Delivery feedback</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+  <div *ngIf="selectedVal == 'productFeedback'">
+    <h3></h3>
+    <table>
+      <tr>
+        <td><mat-label>How is our product quality</mat-label>
+        </td>
+        <td>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">happy</mat-radio-button>
+            <mat-radio-button value="2">neutral</mat-radio-button>
+            <mat-radio-button value="3">sad</mat-radio-button>
+          </mat-radio-group>
+        </td>
+      </tr>
+      <tr>
+        <td><mat-label>How is our product quantity</mat-label></td>
+        <td>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">happy</mat-radio-button>
+            <mat-radio-button value="2">neutral</mat-radio-button>
+            <mat-radio-button value="3">sad</mat-radio-button>
+          </mat-radio-group>
+        </td>
+      </tr>
+      <tr>
+        <td><mat-label>How is our product price </mat-label></td>
+        <td>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">happy</mat-radio-button>
+            <mat-radio-button value="2">neutral</mat-radio-button>
+            <mat-radio-button value="3">sad</mat-radio-button>
+          </mat-radio-group>
+        </td>
+      </tr>
+    </table>
+    <div>
+      <mat-form-field class="half-width">
+        <textarea matInput placeholder="Do you have any other feedback" [formControl]="feedbackField" required></textarea>
+        <mat-error *ngIf="feedbackField.invalid">{{ getErrorMessage(feedbackField) }}</mat-error>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="formGroup.invalid">Post</button>
+  </div>
+
+  <div *ngIf="selectedVal == 'suggestion'">
+    <h3></h3>
+    <table>
+      <tr>
+        <td><mat-label>Do you have query </mat-label>
+        </td>
+        <td>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">happy</mat-radio-button>
+            <mat-radio-button value="2">neutral</mat-radio-button>
+            <mat-radio-button value="3">sad</mat-radio-button>
+          </mat-radio-group>
+        </td>
+      </tr>
+      <tr>
+        <td><mat-label>Is your suggestion related to</mat-label></td>
+        <td>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Delivery</mat-radio-button>
+            <mat-radio-button value="2">Product</mat-radio-button>
+            <mat-radio-button value="3">Price</mat-radio-button>
+          </mat-radio-group>
+        </td>
+      </tr>
+      <tr>
+        <td><mat-label>Do you informed before </mat-label></td>
+        <td>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">Yes</mat-radio-button>
+            <mat-radio-button value="2">No</mat-radio-button>
+            <mat-radio-button value="3">Not sure</mat-radio-button>
+          </mat-radio-group>
+        </td>
+      </tr>
+    </table>
+    <div>
+      <mat-form-field class="half-width">
+        <textarea matInput placeholder="Do you have any other feedback" [formControl]="feedbackField" required></textarea>
+        <mat-error *ngIf="feedbackField.invalid">{{ getErrorMessage(feedbackField) }}</mat-error>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="formGroup.invalid">Post</button>
+  </div>
+
+  <div *ngIf="selectedVal == 'deliveryFeedback'">
+    <h3></h3>
+    <table>
+      <tr>
+        <td><mat-label>Are you happy with item delivery</mat-label>
+        </td>
+        <td>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">happy</mat-radio-button>
+            <mat-radio-button value="2">neutral</mat-radio-button>
+            <mat-radio-button value="3">sad</mat-radio-button>
+          </mat-radio-group>
+        </td>
+      </tr>
+      <tr>
+        <td><mat-label>Is our agent humorous</mat-label></td>
+        <td>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">happy</mat-radio-button>
+            <mat-radio-button value="2">neutral</mat-radio-button>
+            <mat-radio-button value="3">sad</mat-radio-button>
+          </mat-radio-group>
+        </td>
+      </tr>
+      <tr>
+        <td><mat-label>Is our product delivery </mat-label></td>
+        <td>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1">happy</mat-radio-button>
+            <mat-radio-button value="2">neutral</mat-radio-button>
+            <mat-radio-button value="3">sad</mat-radio-button>
+          </mat-radio-group>
+        </td>
+      </tr>
+    </table>
+    <div>
+      <mat-form-field class="half-width">
+        <textarea matInput placeholder="Do you have any other feedback" [formControl]="feedbackField" required></textarea>
+        <mat-error *ngIf="feedbackField.invalid">{{ getErrorMessage(feedbackField) }}</mat-error>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="formGroup.invalid">Post</button>
+  </div>
+</div>
+<div>
+  <br>
+  <p>We try to deliver our best. We value our customer's feedback and suggestions.</p>
+  <h1></h1>
+</div>

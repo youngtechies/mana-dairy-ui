@@ -1,0 +1,109 @@
+<h1 align="center" class="display-4 mb-5">Groceries</h1>
+<div class="row card-deck text-center">
+  <div *ngFor="let productInfo of baseResponse" >
+    <div >
+      <div class="card-body">
+
+        <img height="10%" width="10%" class="card-img-top" src="{{productInfo.productIcon}}" alt="{{productInfo.productName}}">
+        <h4 class="card-title ">{{productInfo.productName}}</h4>
+        <div class="text-left">
+          <p class="card-test"><strong>Description: </strong>{{productInfo.productDescription}}</p>
+          <p class="card-text"><strong>Price: </strong>{{productInfo.productPrice | currency}}</p>
+          <p class="card-text"><strong>Stock: </strong>{{productInfo.productStock}}</p>
+        </div>
+        <br>
+        <a routerLink="/product/{{productInfo.productId}}" *ngIf="productInfo.productStatus == 0; else offBlock"
+           class="btn btn-primary btn-lg"
+        >Get It!</a>
+        <ng-template #offBlock><a class="btn btn-secondary btn-lg disabled">Unavailable</a></ng-template>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!--<app-pagination  [currentPage]="page" ></app-pagination>-->
+
+
+
+<!--<form name="form" #form='ngForm' (ngSubmit)="productInfo?.productStatus == 0 && addToCart()">
+  <mat-grid-list cols="2" rowHeight="100px">
+      <mat-grid-tile
+        *ngFor="let prodInfo of baseResponse"
+        [colspan]="1"
+        [rowspan]="3">
+        <div class="card mb-4">
+          <img height="30%" class="card-img-top" src="{{prodInfo.productIcon}}" alt="{{prodInfo.productName}}">
+          <div class="card-body">
+            <h2 class="card-title ">{{prodInfo.productName}}</h2>
+            <div class="text-left">
+              <input hidden name="productId" [value]=prodInfo?.productId>
+              <p class="card-text">
+                <strong>Price: </strong>
+                <label id="price">{{prodInfo?.productPrice | currency}}</label>
+                <strong>Stock: </strong>{{prodInfo?.productStock}}
+              </p>
+              <p class="card-text"></p>
+              <label class="card-text">
+                <strong>Quantity: </strong>
+                <input [(ngModel)]=count
+                       (change)="validateCount()"
+                       type="number"
+                       name="count"
+                       required
+                       min="1"
+                       [max]=prodInfo?.productStock >
+              </label>
+            </div>
+          </div>
+        </div>
+      </mat-grid-tile>
+  </mat-grid-list>
+</form>-->
+
+<!--<form name="form" #form='ngForm'>-->
+<!--  <div class="row card-deck text-center">-->
+<!--    <div *ngFor="let prodInfo of baseResponse" class="col-md-3 ">-->
+<!--      -->
+<!--    </div>-->
+<!--    <br>-->
+<!--    <ng-template #offBlock><a class="btn btn-secondary btn-lg disabled">Unavailable</a></ng-template>-->
+<!--  </div>-->
+<!--</form>-->
+<!--<button type="submit" [disabled]="!form.form.valid"  class="btn btn-primary btn-lg">Proceed </button>-->
+
+
+<!--<form name="form" #form='ngForm' (ngSubmit)="productInfo?.productStatus == 0 && addToCart()">
+  <mat-grid-list cols="2" rowHeight="100px">
+      <mat-grid-tile
+        *ngFor="let prodInfo of baseResponse"
+        [colspan]="1"
+        [rowspan]="3">
+        <div class="card mb-4">
+          <img height="30%" class="card-img-top" src="{{prodInfo.productIcon}}" alt="{{prodInfo.productName}}">
+          <div class="card-body">
+            <h2 class="card-title ">{{prodInfo.productName}}</h2>
+            <div class="text-left">
+              <input hidden name="productId" [value]=prodInfo?.productId>
+              <p class="card-text">
+                <strong>Price: </strong>
+                <label id="price">{{prodInfo?.productPrice | currency}}</label>
+                <strong>Stock: </strong>{{prodInfo?.productStock}}
+              </p>
+              <p class="card-text"></p>
+              <label class="card-text">
+                <strong>Quantity: </strong>
+                <input [(ngModel)]=count
+                       (change)="validateCount()"
+                       type="number"
+                       name="count"
+                       required
+                       min="1"
+                       [max]=prodInfo?.productStock >
+              </label>
+            </div>
+          </div>
+        </div>
+      </mat-grid-tile>
+  </mat-grid-list>
+</form>-->
+

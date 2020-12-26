@@ -1,0 +1,5 @@
+/node_modules/
+/.idea/
+/www/
+/platforms/android/app/src/main/assets/www/
+/debug.log

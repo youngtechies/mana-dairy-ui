@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "405003811584",
+    "firebase_url": "https://amtailors.firebaseio.com",
+    "project_id": "amtailors",
+    "storage_bucket": "amtailors.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:405003811584:android:68d44399d69d2dff",
+        "android_client_info": {
+          "package_name": "com.amtailors.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "405003811584-9o6f4goqjhlj7lr0j1bf0s6ocu092s06.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD429YzIXL8BE6G0wxP2yUrmZQnOxx3vAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "405003811584-9o6f4goqjhlj7lr0j1bf0s6ocu092s06.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:405003811584:android:c1f04e5180e93c728d11e5",
+        "android_client_info": {
+          "package_name": "com.qs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "405003811584-9o6f4goqjhlj7lr0j1bf0s6ocu092s06.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD429YzIXL8BE6G0wxP2yUrmZQnOxx3vAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "405003811584-9o6f4goqjhlj7lr0j1bf0s6ocu092s06.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

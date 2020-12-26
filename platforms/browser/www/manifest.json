@@ -1,0 +1,12 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "quikshop",
+  "short_name": "quikshop",
+  "version": "com.qs",
+  "description": "A quikshop application that responds to the deviceready event.",
+  "author": "Apache Cordova Team",
+  "icons": [],
+  "start_url": "index.html",
+  "theme_color": "#15C39A"
+}

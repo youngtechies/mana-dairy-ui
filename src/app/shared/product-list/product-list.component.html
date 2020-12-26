@@ -1,0 +1,53 @@
+<h1 align="center" class="display-4 mb-5">{{title}}</h1>
+<!--    <div class="row" *ngFor="let productInfo of baseResponse">-->
+<!--      <div class="col" >-->
+<!--        <div class="card">-->
+<!--          <div class="card-body">-->
+<!--            <img class="card-img" height="100%" src="{{productInfo.productIcon}}" alt="{{productInfo.productName}}">-->
+<!--            <div class="text-right">-->
+<!--              <h2 class="card-title">{{productInfo.productName}}</h2>-->
+<!--              <p class="card-text"><strong>Price: </strong>{{productInfo.productPrice | currency}}</p>-->
+<!--              <p class="card-text"><strong>Available (litres): </strong>{{productInfo.productStock}}</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div>-->
+<!--            <a routerLink="/product/{{productInfo.productId}}" *ngIf="productInfo.productStatus == 0; else offBlock"-->
+<!--               class="btn btn-outline-warning btn-sm">Buy now</a>-->
+<!--            <ng-template #offBlock><a class="btn btn-secondary btn-sm disabled">Unavailable</a></ng-template>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<div class="container">
+  <div class="card" *ngFor="let productInfo of baseResponse">
+    <div class="row no-gutters">
+      <div class="col-auto">
+        <img src="{{productInfo.productIcon}}" class="img-fluid" alt="{{productInfo.productName}}">
+      </div>
+      <div class="col">
+        <div class="card-block px-2">
+          <h4 class="card-title"><strong>{{productInfo.productName}}</strong></h4>
+<!--          <p class="card-text text-left"><strong>Price: </strong>{{productInfo.productPrice | currency}}</p>-->
+          <p class="card-text text-left">{{productInfo.productDescription}}</p>
+<!--          <p class="card-text">Description</p>-->
+<!--          <a href="#" class="btn btn-primary">BUTTON</a>-->
+        </div>
+      </div>
+    </div>
+    <div class="card-footer w-100 text-muted">
+      <p class="card-text text-left"><strong>Rs {{productInfo.productPrice | currency}} /ltr</strong>
+<!--        <label class="text-right"><strong>Available (litres): </strong>{{productInfo.productStock}}</label>-->
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label><strong>Available (litres): </strong>{{productInfo.productStock}}</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a routerLink="/product/{{productInfo.productId}}" *ngIf="productInfo.productStatus == 0; else offBlock"
+                       class="btn btn-outline-warning btn-sm">Order now</a>
+                    <ng-template #offBlock><a class="btn btn-secondary btn-sm disabled">Unavailable</a></ng-template>
+      </p>
+    </div>
+  </div>
+</div>
+<br>
+<div>
+  <label></label>
+</div>

@@ -1,0 +1,231 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~material-design-icons/iconfont/material-icons.css';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+mat-grid-tile {
+  background: white;
+}
+
+.column {
+  float: left;
+  width: 23.33%;
+  padding: 10px;
+}
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+._sidenav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border-radius: 5px;
+  /*background-image: url("assets/images/footer_background_1.JPG");*/
+  background: linear-gradient(-30deg, #b0efe0E5, #b0efe0E5 45%, #b0efe0 45%) #fff;
+}
+/*.mat-icon.footerMenu {
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 51px;
+  width: 25%;
+  !*font-size:26px;*!
+  transform:scale(1);
+  !*color: #15C39A;*!
+  color: #FFFFFF;
+  background-color: #15C39A !important;
+  padding-top: 10px;
+  padding-left: 20px;
+}*/
+.outer-div-row {
+  display: flex;
+  flex-direction: row;
+  background-color: #15C39A;
+  padding-top: 6px;
+  border-radius: 5px;
+}
+.outer-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+.outer-div > span {
+  font-size: 10px;
+  color: #FFFFFF;
+}
+.profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+.signupButtons{
+  background-color: #15C39A;
+  color: #FFFFFF;
+  width: 80%;
+  margin-left: 10%;
+}
+.signupOptionalButtons{
+  color: #FFFFFF;
+  background:linear-gradient(-30deg, #b0efe0E5, #b0efe0E5 45%, #b0efe0 45%) #fff;
+}
+._Navfooter {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.mat-button:hover {
+  background-color: rgba(7, 250, 91, 0.99);
+  color: white;
+}
+mat-sidenav,
+mat-sidenav.mat-locked-open,
+mat-sidenav.mat-closed.mat-locked-open-add-active {
+  min-width: 150px !important;
+  width: 85vw !important;
+  max-width: 60% !important;
+}
+
+._sign_in_alternate_text {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #000;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+}
+
+._sign_in_alternate_text span {
+  background:#fff;
+  padding:0 10px;
+}
+.example-button-row {
+  display: table-cell;
+}
+
+.example-button-row button {
+  display: table-cell;
+  margin-right: 8px;
+}
+._headerDesign{
+  /*background-image: url("assets/images/footer_background_1.JPG");*/
+  /*background: linear-gradient(-30deg, #b0efe0E5, #b0efe0E5 45%, #b0efe0 45%) #fff;*/
+  background-color: #15C39A !important;
+  color: white;
+}
+.menu_account_icon{
+  margin-left:auto;
+  margin-right:0;
+  padding-right: 10px;
+}
+.my-select-panel-class {
+  width:100%;
+  max-width:100%;
+  font-size: 70%;
+}
+#loading{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+p {
+  font-family: Lato;
+}
+
+.half-width {
+  width: 100%;
+}
+.feedback-form-height{
+  margin-top: 15px;
+}
+.feedback-outer-div-row {
+  display: flex;
+  flex-direction: row;
+  background-color: #15C39A;
+  padding-top: 1px;
+  border-radius: 5px;
+}
+.feedback-outer-div-row mat-button-toggle {
+  overflow-x: hidden !important;
+  white-space: pre-wrap !important;
+}
+/*.feedback-outer-div-row .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {*/
+/*  !*line-height: 24px;*!*/
+/*  flex: auto;*/
+/*}*/
+
+.global-font{
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-variant-east-asian: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #15C39A;
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle{
+  background-color: #15C39A;
+}
+
+.yellow-bg{
+  background: url("assets/images/yellow_bg.jpg") !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  top: 0.5rem;
+}
+.yellow-bg h1, p{
+  font-family: "Libre Baskerville", serif;
+  text-align: center;
+  position: relative;
+  top: 0.5rem;
+}
+
+.about-us h1{
+  font-family: "Libre Baskerville", serif;
+  text-align: center;
+  position: relative;
+  top: 0.5rem;
+}

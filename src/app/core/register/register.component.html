@@ -1,0 +1,184 @@
+<!--<div>-->
+<!--  <div>-->
+<!--    <button type="button" class="close" mat-dialog-close aria-label="Close">-->
+<!--      <span aria-hidden="true">&times;</span>-->
+<!--    </button>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <form #form="ngForm">-->
+<!--      <div *ngIf="isInvalid"> <h3>Invalid username or password</h3></div>-->
+<!--      <div><img id="profile-img" class="profile-img-card" src="assets/images/app_logo.ico" /></div>-->
+<!--      <mat-form-field appearance="outline"  *ngIf="isSignUpButtonEnabled">-->
+<!--        <mat-label>Name</mat-label>-->
+<!--        <input matInput [(ngModel)]="user.name" type="text"  id="name" name="name"-->
+<!--               required #name="ngModel">-->
+<!--        <div *ngIf="name.invalid && (name.dirty ||name.touched)">-->
+<!--          <div *ngIf="name.errors.minlength">-->
+<!--            Name must be at least 3 characters long.-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </mat-form-field>-->
+<!--      <mat-form-field appearance="outline" >-->
+<!--        <mat-label>Mobile number</mat-label>-->
+<!--        <input matInput [(ngModel)]="user.contactNumber"-->
+<!--               [pattern]="contactNumberPattern"-->
+<!--               type="text"-->
+<!--               id="contactNumber"-->
+<!--               name="contactNumber"-->
+<!--               required #contactNumber="ngModel">-->
+<!--        <div *ngIf="contactNumber.invalid && (contactNumber.dirty ||contactNumber.touched)">-->
+<!--          <div *ngIf="contactNumber.errors.pattern">-->
+<!--            not valid number-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </mat-form-field>-->
+<!--&lt;!&ndash;      <img [matTooltip]="mobileNo" [matTooltipPosition]="position" height="20px" width="20px" src="assets/images/info-black-24dp.svg">&ndash;&gt;-->
+
+<!--      <mat-form-field appearance="outline" >-->
+<!--        <mat-label>Password</mat-label>-->
+<!--        <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="user.password" type="password" id="password"-->
+<!--               name="password" required #password="ngModel">-->
+<!--&lt;!&ndash;        <div *ngIf="phone.invalid && (phone.dirty ||phone.touched)">&ndash;&gt;-->
+<!--          &lt;!&ndash;            <div *ngIf="phone.errors.required">&ndash;&gt;-->
+<!--          &lt;!&ndash;              Password is required.&ndash;&gt;-->
+<!--          &lt;!&ndash;            </div>&ndash;&gt;-->
+<!--&lt;!&ndash;        </div>&ndash;&gt;-->
+<!--        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">-->
+<!--          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>-->
+<!--        </button>-->
+<!--      </mat-form-field>-->
+<!--&lt;!&ndash;      <img [matTooltip]="customerPass" [matTooltipPosition]="position" height="20px" width="20px" src="assets/images/info-black-24dp.svg">&ndash;&gt;-->
+
+<!--      <div>-->
+<!--        <mat-label ><a (click)="onClickForgetPass()" style="margin-left: 10%;"> Forgot password? </a></mat-label>-->
+<!--        <br>-->
+<!--        <mat-label  *ngIf="isSignUpButtonEnabled">-->
+<!--          <a (click)="onClickSignIn()" style="margin-left: 10%;">Already have an account? <strong>Click here</strong></a>-->
+<!--        </mat-label>-->
+<!--        <mat-label *ngIf="isSignInButtonEnabled">-->
+<!--          <a (click)="onClickSignUp()" style="margin-left: 10%;">Don't have account? <strong>Click here</strong></a>-->
+<!--        </mat-label>-->
+<!--      </div>-->
+<!--      <div *ngIf="isSignInButtonEnabled">-->
+<!--        <br>-->
+<!--        <button class="btn btn-lg btn-block signupButtons" [disabled]="!form.form.valid" (click)="onLogin()">Log In</button>-->
+<!--      </div><br>-->
+<!--      <div  *ngIf="isSignUpButtonEnabled">-->
+<!--        <button type="submit" class="btn btn-lg signupButtons btn-block" [disabled]="!form.form.valid" (click)="onSubmit()">Sign Up</button>-->
+<!--      </div>-->
+<!--    </form>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <br>-->
+<!--    <mat-divider></mat-divider>-->
+<!--    <p><strong>Password rule :</strong></p>-->
+<!--    <p>1. Must be at least 8 characters in length</p>-->
+<!--    <p>2. Must be alphanumeric, with at least one upper and one lower case character</p>-->
+<!--    <p>3. And must have at least one special character. </p>-->
+<!--    <p><strong>Mobile Number :</strong></p><span>10 digit mobile number without country code</span>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<!--Angular reactive form-->
+<div>
+  <div>
+    <button type="button" class="close" mat-dialog-close aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div>
+        <form [formGroup]="frmSignup" (submit)="submit()">
+                <div><img id="profile-img" class="profile-img-card" src="assets/images/app_logo.ico" /></div>
+          <div>
+              <mat-form-field appearance="outline"  *ngIf="isSignUpButtonEnabled">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" id="customerName"
+                       required
+                       [formControl]="customerName">
+                <mat-error *ngIf="customerName.invalid">{{getErrorMessage()}}</mat-error>
+              </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field appearance="outline" >
+              <mat-label>Mobile number</mat-label>
+              <input matInput type="text" id="contactNumber" name="contactNumber"
+                     formControlName="contactNumber"
+                     required>
+            </mat-form-field>
+            <label [ngClass]="frmSignup.controls['contactNumber'].hasError('required') || frmSignup.controls['contactNumber'].hasError('hasNumber')  ? 'text-danger' : 'text-success'">
+              <i class="material-icons">{{ frmSignup.controls['contactNumber'].hasError('required') ||
+              frmSignup.controls['contactNumber'].hasError('hasNumber') ? 'cancel' :
+                  'check_circle' }}</i>
+              Ten digit mobile number without any spaces
+            </label>
+          </div>
+          <div class="form-group">
+            <mat-form-field appearance="outline" >
+              <mat-label>Password</mat-label>
+              <input matInput id="password"
+                     formControlName="password"
+                     [type]="hide ? 'password' : 'text'"
+                     type="password"
+                     [ngClass]="frmSignup.controls['password'].invalid ? 'is-invalid' : ''"
+              >
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+            <label [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('minlength')  ? 'text-danger' : 'text-success'">
+              <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
+              frmSignup.controls['password'].hasError('minlength') ? 'cancel' :
+                  'check_circle' }}</i>
+              Must be at least 8 characters!
+            </label>
+            <label [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasNumber')  ? 'text-danger' : 'text-success'">
+              <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
+              frmSignup.controls['password'].hasError('hasNumber') ? 'cancel' :
+                  'check_circle' }}</i>
+              Must contain at least 1 number!
+            </label>
+            <label [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasCapitalCase')  ? 'text-danger' : 'text-success'">
+              <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
+              frmSignup.controls['password'].hasError('hasCapitalCase') ? 'cancel' :
+                  'check_circle' }}</i>
+              Must contain at least 1 in Capital Case!
+            </label>
+            <label [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasSmallCase')  ? 'text-danger' : 'text-success'">
+              <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
+              frmSignup.controls['password'].hasError('hasSmallCase') ? 'cancel' :
+                  'check_circle' }}</i>
+              Must contain at least 1 Letter in Small Case!
+            </label>
+            <label [ngClass]="frmSignup.controls['password'].hasError('required') || frmSignup.controls['password'].hasError('hasSpecialCharacters') ? 'text-danger' : 'text-success'">
+              <i class="material-icons">{{ frmSignup.controls['password'].hasError('required') ||
+              frmSignup.controls['password'].hasError('hasSpecialCharacters') ? 'cancel' :
+                  'check_circle' }}</i>
+              Must contain at least 1 Special Character!
+            </label>
+          </div>
+<!--          <div class="form-group">-->
+<!--            <button [disabled]="frmSignup.invalid" type="submit" class="btn btn-primary btn-block font-weight-bold">Sign-->
+<!--              up</button>-->
+<!--          </div>-->
+          <div class="form-group" *ngIf="isSignInButtonEnabled">
+            <br>
+            <button class="btn btn-lg btn-block signupButtons" [disabled]="!frmSignup.valid" (click)="onLogin()">Log In</button>
+          </div><br>
+          <div class="form-group" *ngIf="isSignUpButtonEnabled">
+            <button type="submit" class="btn btn-lg signupButtons btn-block" [disabled]="!frmSignup.valid" (click)="onSubmit()">Sign Up</button>
+          </div>
+
+          <div>
+            <mat-label ><a (click)="onClickForgetPass()" style="margin-left: 10%;"> Forgot password? </a></mat-label>
+            <br>
+            <mat-label  *ngIf="isSignUpButtonEnabled">
+              <a (click)="onClickSignIn()" style="margin-left: 10%;">Already have an account? <strong>Click here</strong></a>
+            </mat-label>
+            <mat-label *ngIf="isSignInButtonEnabled">
+              <a (click)="onClickSignUp()" style="margin-left: 10%;">Don't have account? <strong>Click here</strong></a>
+            </mat-label>
+          </div>
+        </form>
+      </div>
+</div>

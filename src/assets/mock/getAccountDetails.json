@@ -1,0 +1,49 @@
+{
+  "category": "kids",
+  "ManaResponse": [
+    {
+      "token": "test token",
+      "addrNum": "1",
+      "pincode": "600119",
+      "houseOrBuildingName": "22",
+      "roadOrStreetOrArea": "MGR Street",
+      "city": "chennai",
+      "state": "Tamilnadu",
+      "landmark": "Sholiganallur",
+      "addressType": "house"
+    },
+    {
+      "token": "test token",
+      "addrNum": "2",
+      "pincode": "600119",
+      "houseOrBuildingName": "Ladies hostel",
+      "roadOrStreetOrArea": "Beside canara bank",
+      "city": "chennai",
+      "state": "Tamilnadu",
+      "landmark": "Sholiganallur",
+      "addressType": "house"
+    },
+    {
+      "token": "test token",
+      "addrNum": "3",
+      "pincode": "600119",
+      "houseOrBuildingName": "#4",
+      "roadOrStreetOrArea": "MGR Street",
+      "city": "chennai",
+      "state": "Tamilnadu",
+      "landmark": "Sholiganallur",
+      "addressType": "house"
+    },
+    {
+      "token": "test token4",
+      "addrNum": "4",
+      "pincode": "600119",
+      "houseOrBuildingName": "#2",
+      "roadOrStreetOrArea": "Opposite to Masque",
+      "city": "chennai",
+      "state": "Tamilnadu",
+      "landmark": "Karapakkam",
+      "addressType": "Office"
+    }
+  ]
+}

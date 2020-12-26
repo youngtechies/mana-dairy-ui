@@ -1,0 +1,99 @@
+<mat-accordion multi>
+  <mat-expansion-panel disabled>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Account Settings
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        profile
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <mat-form-field>
+      <mat-label>Full Name</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>DOB</mat-label>
+      <input matInput [matDatepicker]="picker" (focus)="picker.open()" readonly>
+    </mat-form-field>
+    <mat-datepicker #picker></mat-datepicker>
+
+    <mat-action-row>
+      <button mat-button color="primary" (click)="updatePersonalDetails()">Update</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel disabled>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        address
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel *ngFor="let item of userAccountDetails">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Address : {{item.addrNum}} - {{item.addressType}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-form-field>
+      <mat-label>House/Building</mat-label>
+      <input matInput [value]="item.houseOrBuildingName">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Street</mat-label>
+      <input matInput [value]="item.roadOrStreetOrArea">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>City</mat-label>
+      <input matInput [value]="item.city">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>State</mat-label>
+      <input matInput [value]="item.state">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>landmark</mat-label>
+      <input matInput [value]="item.landmark">
+    </mat-form-field>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel disabled>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        password
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+  </mat-expansion-panel>
+
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>change password </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-form-field>
+      <mat-label>old password</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>new password</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <mat-action-row>
+      <button mat-button color="primary" (click)="updatePersonalDetails()">Update</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+
+</mat-accordion>
+<div><br>
+  <h3>Need help </h3>
+  Please reach out to us by <strong>mr.abdulrasheed58@gmail.com or 8122470417.</strong>
+</div>
